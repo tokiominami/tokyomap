@@ -1,0 +1,14 @@
+.search
+  = form_with(url: posts_searches_path, local: true, method: :get, class: "search__form") do |f| 
+    = f.text_field :keyword, placeholder: "トイレを検索する", class: "search__input" 
+    = f.submit "検索", class: "search__btn"
+
+.main
+  .main__contents
+    - @posts.each do |post|
+      .main__contents__content
+        .main__contents__content__area
+          = post.area
+        .main__contents__content__text
+          = post.text
+

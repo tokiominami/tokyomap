@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Tokyomap
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .header
+      = link_to '東京 toiletmemory', root_path, class: 'header__logo'
+    
+    = yield
+
+    .footer
+      %ul.footer__box
+        %li.footer__box__comment
+          プライバシーポリシー
+        %li.footer__box__comment
+          東京toiletmemoryについて
+      %small.footer__copyright
+        © 東京toiletmemory,inc.
